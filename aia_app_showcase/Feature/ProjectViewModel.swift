@@ -35,10 +35,23 @@ extension ProjectViewModel {
     }
 }
 
+// MARK: - Private Fucntions
+private extension ProjectViewModel {
+    func getURL(function: StockFunctions, symbol: StockSymbols) -> String {
+        let apiKey = apiKeys[0]
+        let functionStr = function.rawValue
+        let interval = "\(Utils.getDefault(key: .interval))min"
+        let outputSize = Utils.getDefault(key: .outputSize)
+        let str = "https://www.alphavantage.co/query?function=\(functionStr)&symbol=\(symbol)&interval=\(interval)&outputsize=\(outputSize)&apikey=\(apiKey)"
+        
+        return str
+    }
+}
+
 // MARK: - API
 extension ProjectViewModel {
-    func timeSeriesIntraday() {
-        let url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=demo"
+    func timeSeriesIntraday(symbol: StockSymbols) {
+        let url = getURL(function: .timeSeriesIntraday, symbol: symbol)
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -47,7 +60,7 @@ extension ProjectViewModel {
             print(response ?? "")
             do {
 //                let json = (try? JSONSerialization.jsonObject(with: data!)).flatMap{ $0 as? [String: Any] }
-                let json = try! JSONDecoder().decode(DecodedArray<TimeSeriesIntradayDataType>.self, from: data!)
+                let json = try? JSONDecoder().decode(DecodedArray<TimeSeriesIntradayDataType>.self, from: data!)
                 print(json)
             } catch {
                 print("error")
@@ -55,8 +68,8 @@ extension ProjectViewModel {
         }.resume()
     }
     
-    func timeSeriesDailyAdjusted() {
-        let url = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=IBM&apikey=demo"
+    func timeSeriesDailyAdjusted(symbol: StockSymbols) {
+        let url = getURL(function: .timeSeriesDailyAdjusted, symbol: symbol)
         
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "GET"
@@ -65,7 +78,7 @@ extension ProjectViewModel {
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             print(response ?? "")
             
-            
+            // todo
             
         }.resume()
     }
