@@ -20,7 +20,7 @@ class MainViewController: UITabBarController {
 private extension MainViewController {
     func initCommon() {
         self.setViewControllers()
-        Utils.removeAllDefaults()
+//        Utils.removeAllDefaults()
     }
     
     func setViewControllers() {
