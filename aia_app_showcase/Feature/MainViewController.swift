@@ -12,11 +12,17 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setViewControllers()
+        self.initCommon()
     }
 }
 
+// MARK: - Private Functions
 private extension MainViewController {
+    func initCommon() {
+        self.setViewControllers()
+        Utils.removeAllDefaults()
+    }
+    
     func setViewControllers() {
         let firstViewController = FirstViewController()
         firstViewController.tabBarItem = UITabBarItem(title: "First", image: nil, tag: 0)

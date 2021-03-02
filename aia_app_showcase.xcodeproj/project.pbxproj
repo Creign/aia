@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A442ECC25EE10A90033DF52 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A442ECB25EE10A90033DF52 /* Utils.swift */; };
+		4A442ECD25EE10A90033DF52 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A442ECB25EE10A90033DF52 /* Utils.swift */; };
+		4A442ECE25EE10A90033DF52 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A442ECB25EE10A90033DF52 /* Utils.swift */; };
+		4A442ED325EE11B80033DF52 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A442ED225EE11B80033DF52 /* Enums.swift */; };
+		4A442ED425EE11B80033DF52 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A442ED225EE11B80033DF52 /* Enums.swift */; };
+		4A442ED525EE11B80033DF52 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A442ED225EE11B80033DF52 /* Enums.swift */; };
 		4AC6776D25EBBB0800F57F9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6776C25EBBB0800F57F9B /* AppDelegate.swift */; };
 		4AC6777125EBBB0800F57F9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6777025EBBB0800F57F9B /* ViewController.swift */; };
 		4AC6777625EBBB0A00F57F9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6777525EBBB0A00F57F9B /* Assets.xcassets */; };
@@ -37,6 +43,9 @@
 		4AC677F325EBC85B00F57F9B /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC677F225EBC85B00F57F9B /* ProjectViewModel.swift */; };
 		4AC677F425EBC85B00F57F9B /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC677F225EBC85B00F57F9B /* ProjectViewModel.swift */; };
 		4AC677F525EBC85B00F57F9B /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC677F225EBC85B00F57F9B /* ProjectViewModel.swift */; };
+		4AC6780425EBD1EB00F57F9B /* TimeSeriesIntradayDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6780325EBD1EB00F57F9B /* TimeSeriesIntradayDataType.swift */; };
+		4AC6780525EBD1EB00F57F9B /* TimeSeriesIntradayDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6780325EBD1EB00F57F9B /* TimeSeriesIntradayDataType.swift */; };
+		4AC6780625EBD1EB00F57F9B /* TimeSeriesIntradayDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6780325EBD1EB00F57F9B /* TimeSeriesIntradayDataType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +66,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A442ECB25EE10A90033DF52 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		4A442ED225EE11B80033DF52 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		4AC6776925EBBB0800F57F9B /* aia_app_showcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aia_app_showcase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AC6776C25EBBB0800F57F9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AC6777025EBBB0800F57F9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +88,7 @@
 		4AC677E625EBC60300F57F9B /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		4AC677E725EBC60300F57F9B /* ThirdViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdViewController.xib; sourceTree = "<group>"; };
 		4AC677F225EBC85B00F57F9B /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
+		4AC6780325EBD1EB00F57F9B /* TimeSeriesIntradayDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeriesIntradayDataType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,12 +139,15 @@
 		4AC6776B25EBBB0800F57F9B /* aia_app_showcase */ = {
 			isa = PBXGroup;
 			children = (
+				4AC6780225EBD1A400F57F9B /* Models */,
 				4AC677F125EBC81A00F57F9B /* Feature */,
 				4AC6776C25EBBB0800F57F9B /* AppDelegate.swift */,
 				4AC6777025EBBB0800F57F9B /* ViewController.swift */,
 				4AC6777525EBBB0A00F57F9B /* Assets.xcassets */,
 				4AC6777725EBBB0A00F57F9B /* LaunchScreen.storyboard */,
 				4AC6777A25EBBB0A00F57F9B /* Info.plist */,
+				4A442ECB25EE10A90033DF52 /* Utils.swift */,
+				4A442ED225EE11B80033DF52 /* Enums.swift */,
 			);
 			path = aia_app_showcase;
 			sourceTree = "<group>";
@@ -192,6 +207,14 @@
 				4AC677D725EBC48900F57F9B /* Third */,
 			);
 			path = Feature;
+			sourceTree = "<group>";
+		};
+		4AC6780225EBD1A400F57F9B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4AC6780325EBD1EB00F57F9B /* TimeSeriesIntradayDataType.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +357,9 @@
 			files = (
 				4AC677F325EBC85B00F57F9B /* ProjectViewModel.swift in Sources */,
 				4AC6777125EBBB0800F57F9B /* ViewController.swift in Sources */,
+				4A442ED325EE11B80033DF52 /* Enums.swift in Sources */,
+				4A442ECC25EE10A90033DF52 /* Utils.swift in Sources */,
+				4AC6780425EBD1EB00F57F9B /* TimeSeriesIntradayDataType.swift in Sources */,
 				4AC6776D25EBBB0800F57F9B /* AppDelegate.swift in Sources */,
 				4AC677B225EBC09800F57F9B /* MainViewController.swift in Sources */,
 				4AC677DA25EBC5F500F57F9B /* SecondViewController.swift in Sources */,
@@ -350,8 +376,11 @@
 				4AC677C725EBC22500F57F9B /* FirstViewController.swift in Sources */,
 				4AC677E925EBC60300F57F9B /* ThirdViewController.swift in Sources */,
 				4AC6778425EBBB0A00F57F9B /* aia_app_showcaseTests.swift in Sources */,
+				4AC6780525EBD1EB00F57F9B /* TimeSeriesIntradayDataType.swift in Sources */,
 				4AC677F425EBC85B00F57F9B /* ProjectViewModel.swift in Sources */,
 				4AC677B325EBC09800F57F9B /* MainViewController.swift in Sources */,
+				4A442ED425EE11B80033DF52 /* Enums.swift in Sources */,
+				4A442ECD25EE10A90033DF52 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,8 +392,11 @@
 				4AC677C825EBC22500F57F9B /* FirstViewController.swift in Sources */,
 				4AC677EA25EBC60300F57F9B /* ThirdViewController.swift in Sources */,
 				4AC6778F25EBBB0A00F57F9B /* aia_app_showcaseUITests.swift in Sources */,
+				4AC6780625EBD1EB00F57F9B /* TimeSeriesIntradayDataType.swift in Sources */,
 				4AC677F525EBC85B00F57F9B /* ProjectViewModel.swift in Sources */,
 				4AC677B425EBC09800F57F9B /* MainViewController.swift in Sources */,
+				4A442ED525EE11B80033DF52 /* Enums.swift in Sources */,
+				4A442ECE25EE10A90033DF52 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

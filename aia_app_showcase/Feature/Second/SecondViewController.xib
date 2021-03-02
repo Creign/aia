@@ -17,14 +17,33 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="alm-6q-51X">
+                    <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vCa-yb-2fP">
+                    <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemGreenColor"/>
+            <constraints>
+                <constraint firstItem="vCa-yb-2fP" firstAttribute="top" secondItem="alm-6q-51X" secondAttribute="bottom" id="ERK-hb-Vd7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vCa-yb-2fP" secondAttribute="bottom" id="Gh8-nz-Wiw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vCa-yb-2fP" secondAttribute="trailing" id="Qbu-Wj-Rj9"/>
+                <constraint firstItem="alm-6q-51X" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Rvj-ur-XuR"/>
+                <constraint firstItem="alm-6q-51X" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ZFn-hB-TWz"/>
+                <constraint firstItem="alm-6q-51X" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cUN-IC-tht"/>
+                <constraint firstItem="vCa-yb-2fP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eMJ-fQ-duC"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="112" y="100"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
