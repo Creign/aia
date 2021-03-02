@@ -48,6 +48,7 @@ public enum StockSymbols: String {
 public enum UserDefaultTypes: String {
     case outputSize = "outputSize"
     case interval = "interval"
+    case apiKey = "apiKey"
 }
 
 public enum OutputSizeType: String {
@@ -55,6 +56,6 @@ public enum OutputSizeType: String {
     case full = "full"
 }
 
-public enum KeychainTypes: String {
-    case apiKeys = "apiKeys"
-}
+//public enum KeychainTypes: String {
+//    case apiKeys = "apiKeys"
+//}

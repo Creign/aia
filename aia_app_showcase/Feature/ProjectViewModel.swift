@@ -9,16 +9,17 @@ import Foundation
 
 class ProjectViewModel {
     
-    var apiKeys: [String] = ["G9V8Y16K2EW7MZHA", "G9V8Y16K2EW7MZHA"]
-    var outputSizes: [String] = ["Compact", "Full"]
-    var interval: [String] = ["1", "5", "15", "30", "60"]
+    let apiKeys: [String] = ["G9V8Y16K2EW7MZHA", "demo"]
+    let outputSizes: [String] = ["Compact", "Full"]
+    let interval: [String] = ["1", "5", "15", "30", "60"]
 }
 
 // MARK: - Public Functions
 extension ProjectViewModel {
     func getOutputSegmentLoadIndex() -> Int {
+        let defaultsSize = Utils.getDefault(key: .outputSize).lowercased()
         for (index, size) in outputSizes.enumerated() {
-            if Utils.getDefault(key: .outputSize).lowercased() == size.lowercased() {
+            if defaultsSize == size.lowercased() {
                 return index
             }
         }
@@ -26,8 +27,19 @@ extension ProjectViewModel {
     }
     
     func getIntervalSegmentLoadIndex() -> Int {
+        let defaultsInterval = Utils.getDefault(key: .interval)
         for (index, interval) in interval.enumerated() {
-            if Utils.getDefault(key: .interval) == interval {
+            if defaultsInterval == interval {
+                return index
+            }
+        }
+        return 0
+    }
+    
+    func getApiKeyIndex() -> Int {
+        let defaultsKey = Utils.getDefault(key: .apiKey).lowercased()
+        for (index, key) in apiKeys.enumerated() {
+            if defaultsKey == key.lowercased() {
                 return index
             }
         }

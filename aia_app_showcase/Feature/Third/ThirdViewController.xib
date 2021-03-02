@@ -11,7 +11,7 @@
             <connections>
                 <outlet property="intervalSegment" destination="5UJ-bE-LW9" id="gLU-y1-0aY"/>
                 <outlet property="outputSizeSegment" destination="OM2-st-ekc" id="BoO-C7-zn0"/>
-                <outlet property="pickerView" destination="fy9-3N-F1o" id="Pta-ja-euk"/>
+                <outlet property="pickerView" destination="fy9-3N-F1o" id="2U5-jX-oQx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,17 +21,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zGP-y1-pTZ">
-                    <rect key="frame" x="10" y="54" width="394" height="338"/>
+                    <rect key="frame" x="10" y="54" width="394" height="298"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9C-F5-3Fh">
-                            <rect key="frame" x="0.0" y="0.0" width="394" height="30"/>
-                            <state key="normal" title="Button"/>
-                            <connections>
-                                <action selector="didTap:" destination="-1" eventType="touchUpInside" id="1Q2-Ib-eoE"/>
-                            </connections>
-                        </button>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ml4-PO-hWd">
-                            <rect key="frame" x="0.0" y="40" width="394" height="31"/>
+                            <rect key="frame" x="0.0" y="0.0" width="394" height="31"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Output Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaY-pe-Cje">
                                     <rect key="frame" x="0.0" y="0.0" width="197" height="31"/>
@@ -49,7 +42,7 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zDO-hl-8WA">
-                            <rect key="frame" x="0.0" y="81" width="394" height="31"/>
+                            <rect key="frame" x="0.0" y="41" width="394" height="31"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interval (minutes)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DiZ-WW-rty">
                                     <rect key="frame" x="0.0" y="0.0" width="197" height="31"/>
@@ -64,13 +57,13 @@
                                         <segment title="5"/>
                                         <segment title="15"/>
                                         <segment title="30"/>
-                                        <segment title="60"/>
+                                        <segment title="50"/>
                                     </segments>
                                 </segmentedControl>
                             </subviews>
                         </stackView>
                         <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fy9-3N-F1o">
-                            <rect key="frame" x="0.0" y="122" width="394" height="216"/>
+                            <rect key="frame" x="0.0" y="82" width="394" height="216"/>
                         </pickerView>
                     </subviews>
                 </stackView>

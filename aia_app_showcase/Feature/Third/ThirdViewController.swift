@@ -13,10 +13,6 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var intervalSegment: UISegmentedControl!
     @IBOutlet weak var pickerView: UIPickerView!
     
-    @IBAction func didTap(_ sender: UIButton) {
-        print(Utils.getDefault(key: .interval))
-    }
-    
     let viewModel = ProjectViewModel()
     
     override func viewDidLoad() {
@@ -41,9 +37,13 @@ private extension ThirdViewController {
                                   action: #selector(didTapIntervalSegment(_:)), for: .valueChanged)
         
         pickerView.delegate = self
+        pickerView.selectRow(viewModel.getApiKeyIndex(),
+                             inComponent: 0,
+                             animated: true)
     }
 }
 
+// MARK: - UIPickerViewDelegate, UIPickerViewDataSource
 extension ThirdViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return viewModel.apiKeys.count
@@ -57,7 +57,9 @@ extension ThirdViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         return viewModel.apiKeys[row]
     }
     
-    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        Utils.setDefault(key: .apiKey, value: viewModel.apiKeys[row])
+    }
 }
 
 // MARK: - Actions
