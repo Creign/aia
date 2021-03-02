@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="intervalSegment" destination="5UJ-bE-LW9" id="gLU-y1-0aY"/>
                 <outlet property="outputSizeSegment" destination="OM2-st-ekc" id="BoO-C7-zn0"/>
+                <outlet property="pickerView" destination="fy9-3N-F1o" id="Pta-ja-euk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -63,7 +64,7 @@
                                         <segment title="5"/>
                                         <segment title="15"/>
                                         <segment title="30"/>
-                                        <segment title="50"/>
+                                        <segment title="60"/>
                                     </segments>
                                 </segmentedControl>
                             </subviews>

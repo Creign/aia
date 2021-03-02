@@ -9,9 +9,30 @@ import Foundation
 
 class ProjectViewModel {
     
-    var apiKey = "G9V8Y16K2EW7MZHA"
+    var apiKeys: [String] = ["G9V8Y16K2EW7MZHA", "G9V8Y16K2EW7MZHA"]
+    var outputSizes: [String] = ["Compact", "Full"]
+    var interval: [String] = ["1", "5", "15", "30", "60"]
+}
+
+// MARK: - Public Functions
+extension ProjectViewModel {
+    func getOutputSegmentLoadIndex() -> Int {
+        for (index, size) in outputSizes.enumerated() {
+            if Utils.getDefault(key: .outputSize).lowercased() == size.lowercased() {
+                return index
+            }
+        }
+        return 0
+    }
     
-    
+    func getIntervalSegmentLoadIndex() -> Int {
+        for (index, interval) in interval.enumerated() {
+            if Utils.getDefault(key: .interval) == interval {
+                return index
+            }
+        }
+        return 0
+    }
 }
 
 // MARK: - API
