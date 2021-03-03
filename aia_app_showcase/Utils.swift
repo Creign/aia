@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Utils {
     static func setDefault(key: UserDefaultTypes, value: String) {
@@ -15,7 +16,7 @@ class Utils {
         }
     }
     
-    static func getDefault(key: UserDefaultTypes) -> String {
+    static func getDefault(key: UserDefaultTypes) -> String? {
         return UserDefaults.standard.string(forKey: key.rawValue) ?? ""
     }
     
@@ -26,5 +27,15 @@ class Utils {
     
     static func removeUserDefault(_ key: UserDefaultTypes) {
         UserDefaults.standard.removeObject(forKey: key.rawValue)
+    }
+    
+    static func showAlert(message: String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertController.Style.alert)
+
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+            AppDelegate.shared.getTopLevelViewController()?.present(alert, animated: true, completion: nil)
+        }
     }
 }

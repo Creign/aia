@@ -22,3 +22,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+extension AppDelegate {
+    static var shared: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+    
+    static var globalWindow: UIWindow {
+        return shared.window!
+    }
+    
+    func getTopLevelViewController() -> UIViewController? {
+        if var topController = AppDelegate.globalWindow.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            return topController
+        }
+        return nil
+    }
+}
+

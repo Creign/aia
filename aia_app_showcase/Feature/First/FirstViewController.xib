@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstViewController" customModule="aia_app_showcase" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="cAP-HN-gRL" id="rbW-PY-9m3"/>
+                <outlet property="txtSearch" destination="pi3-jV-La4" id="LGu-Lm-zrH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,14 +19,33 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="pi3-jV-La4">
+                    <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cAP-HN-gRL">
+                    <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemIndigoColor"/>
+            <constraints>
+                <constraint firstItem="cAP-HN-gRL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WgU-q5-rPF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cAP-HN-gRL" secondAttribute="bottom" id="Yi1-Zt-eQw"/>
+                <constraint firstItem="pi3-jV-La4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Zyd-HH-BUM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cAP-HN-gRL" secondAttribute="trailing" id="toH-Nh-ACt"/>
+                <constraint firstItem="cAP-HN-gRL" firstAttribute="top" secondItem="pi3-jV-La4" secondAttribute="bottom" id="u36-mn-SKu"/>
+                <constraint firstItem="pi3-jV-La4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="vDa-kE-BBw"/>
+                <constraint firstAttribute="trailing" secondItem="pi3-jV-La4" secondAttribute="trailing" id="y8S-k9-37Y"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="112" y="100"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

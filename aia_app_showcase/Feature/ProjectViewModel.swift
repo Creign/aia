@@ -12,12 +12,21 @@ class ProjectViewModel {
     let apiKeys: [String] = ["G9V8Y16K2EW7MZHA", "demo"]
     let outputSizes: [String] = ["Compact", "Full"]
     let interval: [String] = ["1", "5", "15", "30", "60"]
+    
+    var currentIntervalKey: String = ""
+    var timeSeriesIntradayStock: Stock?
+    var timeSeriesKeyValue: [String] = []
+    
+    // MARK: - Bindings
+    var getIntradayError: ((String) -> Void)?
+    var getIntradaySuccess: (() -> Void)?
+    
 }
 
 // MARK: - Public Functions
 extension ProjectViewModel {
     func getOutputSegmentLoadIndex() -> Int {
-        let defaultsSize = Utils.getDefault(key: .outputSize).lowercased()
+        guard let defaultsSize = Utils.getDefault(key: .outputSize)?.lowercased() else { return 0 }
         for (index, size) in outputSizes.enumerated() {
             if defaultsSize == size.lowercased() {
                 return index
@@ -27,7 +36,12 @@ extension ProjectViewModel {
     }
     
     func getIntervalSegmentLoadIndex() -> Int {
-        let defaultsInterval = Utils.getDefault(key: .interval)
+        guard let defaultsInterval = Utils.getDefault(key: .interval) else {
+            self.currentIntervalKey = "Time Series (1min)"
+            return 0
+        }
+        
+        self.currentIntervalKey = "Time Series (\(defaultsInterval)min)"
         for (index, interval) in interval.enumerated() {
             if defaultsInterval == interval {
                 return index
@@ -37,7 +51,7 @@ extension ProjectViewModel {
     }
     
     func getApiKeyIndex() -> Int {
-        let defaultsKey = Utils.getDefault(key: .apiKey).lowercased()
+        guard let defaultsKey = Utils.getDefault(key: .apiKey)?.lowercased() else { return 0 }
         for (index, key) in apiKeys.enumerated() {
             if defaultsKey == key.lowercased() {
                 return index
@@ -49,12 +63,12 @@ extension ProjectViewModel {
 
 // MARK: - Private Fucntions
 private extension ProjectViewModel {
-    func getURL(function: StockFunctions, symbol: StockSymbols) -> String {
+    func getURL(function: StockFunctions, symbol: String) -> String {
         let apiKey = apiKeys[0]
         let functionStr = function.rawValue
-        let interval = "\(Utils.getDefault(key: .interval))min"
+        let interval = "\(Utils.getDefault(key: .interval) ?? "1")min"
         let outputSize = Utils.getDefault(key: .outputSize)
-        let str = "https://www.alphavantage.co/query?function=\(functionStr)&symbol=\(symbol)&interval=\(interval)&outputsize=\(outputSize)&apikey=\(apiKey)"
+        let str = "https://www.alphavantage.co/query?function=\(functionStr)&symbol=\(symbol)&interval=\(interval)&outputsize=\(outputSize ?? "")&apikey=\(apiKey)"
         
         return str
     }
@@ -62,7 +76,7 @@ private extension ProjectViewModel {
 
 // MARK: - API
 extension ProjectViewModel {
-    func timeSeriesIntraday(symbol: StockSymbols) {
+    func timeSeriesIntraday(symbol: String) {
         let url = getURL(function: .timeSeriesIntraday, symbol: symbol)
         var request = URLRequest(url: URL(string: url)!)
         request.httpMethod = "GET"
@@ -72,15 +86,22 @@ extension ProjectViewModel {
             print(response ?? "")
             do {
 //                let json = (try? JSONSerialization.jsonObject(with: data!)).flatMap{ $0 as? [String: Any] }
-                let json = try? JSONDecoder().decode(DecodedArray<TimeSeriesIntradayDataType>.self, from: data!)
-                print(json)
+//                let json = try? JSONDecoder().decode(DecodedArray<TimeSeriesIntradayDataType>.self, from: data!)
+                let stock = try! JSONDecoder().decode(Stock.self, from: data!)
+//                if let err: String = json?["Error Message"] as? String , err != "" {
+//                    self.getIntradayError?(err)
+//                } else {
+                    self.timeSeriesIntradayStock = stock
+                self.timeSeriesKeyValue.append(contentsOf: stock.timeSeries.keys)
+                    self.getIntradaySuccess?()
+//                }
             } catch {
-                print("error")
+                self.getIntradayError?(error.localizedDescription)
             }
         }.resume()
     }
     
-    func timeSeriesDailyAdjusted(symbol: StockSymbols) {
+    func timeSeriesDailyAdjusted(symbol: String) {
         let url = getURL(function: .timeSeriesDailyAdjusted, symbol: symbol)
         
         var request = URLRequest(url: URL(string: url)!)
