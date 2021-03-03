@@ -17,9 +17,15 @@ class ProjectViewModel {
     var timeSeriesIntradayStock: Stock?
     var timeSeriesKeyValue: [String] = []
     
+    var timeSeriesDailyStock: StockDaily?
+    var timeSeriesDailyKeyValue: [String] = []
+    
     // MARK: - Bindings
     var getIntradayError: ((String) -> Void)?
     var getIntradaySuccess: (() -> Void)?
+    
+    var getDailyError: ((String) -> Void)?
+    var getDailySuccess: (() -> Void)?
     
 }
 
@@ -83,18 +89,13 @@ extension ProjectViewModel {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
-            print(response ?? "")
             do {
 //                let json = (try? JSONSerialization.jsonObject(with: data!)).flatMap{ $0 as? [String: Any] }
 //                let json = try? JSONDecoder().decode(DecodedArray<TimeSeriesIntradayDataType>.self, from: data!)
                 let stock = try! JSONDecoder().decode(Stock.self, from: data!)
-//                if let err: String = json?["Error Message"] as? String , err != "" {
-//                    self.getIntradayError?(err)
-//                } else {
                     self.timeSeriesIntradayStock = stock
                 self.timeSeriesKeyValue.append(contentsOf: stock.timeSeries.keys)
-                    self.getIntradaySuccess?()
-//                }
+                self.getIntradaySuccess?()
             } catch {
                 self.getIntradayError?(error.localizedDescription)
             }
@@ -110,9 +111,14 @@ extension ProjectViewModel {
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             print(response ?? "")
-            
-            // todo
-            
+            do {
+                let stock = try! JSONDecoder().decode(StockDaily.self, from: data!)
+                self.timeSeriesDailyStock = stock
+                self.timeSeriesDailyKeyValue.append(contentsOf: stock.timeSeries.keys)
+                self.getDailySuccess?()
+            } catch {
+                self.getDailyError?(error.localizedDescription)
+            }
         }.resume()
     }
 }

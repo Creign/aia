@@ -19,6 +19,15 @@
 		4A442F2E25EF45930033DF52 /* IntradateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A442F2A25EF45930033DF52 /* IntradateTableViewCell.xib */; };
 		4A442F2F25EF45930033DF52 /* IntradateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A442F2A25EF45930033DF52 /* IntradateTableViewCell.xib */; };
 		4A442F3025EF45930033DF52 /* IntradateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A442F2A25EF45930033DF52 /* IntradateTableViewCell.xib */; };
+		4A991F3025EF767D00771E8B /* StockDaily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A991F2F25EF767D00771E8B /* StockDaily.swift */; };
+		4A991F3125EF767D00771E8B /* StockDaily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A991F2F25EF767D00771E8B /* StockDaily.swift */; };
+		4A991F3225EF767D00771E8B /* StockDaily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A991F2F25EF767D00771E8B /* StockDaily.swift */; };
+		4A991F3B25EF78AD00771E8B /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A991F3725EF78AD00771E8B /* DailyTableViewCell.swift */; };
+		4A991F3C25EF78AD00771E8B /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A991F3725EF78AD00771E8B /* DailyTableViewCell.swift */; };
+		4A991F3D25EF78AD00771E8B /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A991F3725EF78AD00771E8B /* DailyTableViewCell.swift */; };
+		4A991F4A25EF79EE00771E8B /* DailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A991F3625EF78AD00771E8B /* DailyTableViewCell.xib */; };
+		4A991F5125EF79EF00771E8B /* DailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A991F3625EF78AD00771E8B /* DailyTableViewCell.xib */; };
+		4A991F5525EF79F000771E8B /* DailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A991F3625EF78AD00771E8B /* DailyTableViewCell.xib */; };
 		4AC6776D25EBBB0800F57F9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6776C25EBBB0800F57F9B /* AppDelegate.swift */; };
 		4AC6777125EBBB0800F57F9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC6777025EBBB0800F57F9B /* ViewController.swift */; };
 		4AC6777625EBBB0A00F57F9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC6777525EBBB0A00F57F9B /* Assets.xcassets */; };
@@ -76,6 +85,9 @@
 		4A442ED225EE11B80033DF52 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		4A442F2925EF45930033DF52 /* IntradateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntradateTableViewCell.swift; sourceTree = "<group>"; };
 		4A442F2A25EF45930033DF52 /* IntradateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntradateTableViewCell.xib; sourceTree = "<group>"; };
+		4A991F2F25EF767D00771E8B /* StockDaily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDaily.swift; sourceTree = "<group>"; };
+		4A991F3625EF78AD00771E8B /* DailyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyTableViewCell.xib; sourceTree = "<group>"; };
+		4A991F3725EF78AD00771E8B /* DailyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
 		4AC6776925EBBB0800F57F9B /* aia_app_showcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aia_app_showcase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AC6776C25EBBB0800F57F9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AC6777025EBBB0800F57F9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +193,8 @@
 		4AC677D525EBC47200F57F9B /* Second */ = {
 			isa = PBXGroup;
 			children = (
+				4A991F3725EF78AD00771E8B /* DailyTableViewCell.swift */,
+				4A991F3625EF78AD00771E8B /* DailyTableViewCell.xib */,
 				4AC677D825EBC5F500F57F9B /* SecondViewController.swift */,
 				4AC677D925EBC5F500F57F9B /* SecondViewController.xib */,
 			);
@@ -223,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				4AC6780325EBD1EB00F57F9B /* TimeSeriesIntradayDataType.swift */,
+				4A991F2F25EF767D00771E8B /* StockDaily.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -333,6 +348,7 @@
 				4AC6777925EBBB0A00F57F9B /* LaunchScreen.storyboard in Resources */,
 				4AC6777625EBBB0A00F57F9B /* Assets.xcassets in Resources */,
 				4A442F2E25EF45930033DF52 /* IntradateTableViewCell.xib in Resources */,
+				4A991F4A25EF79EE00771E8B /* DailyTableViewCell.xib in Resources */,
 				4AC677EB25EBC60300F57F9B /* ThirdViewController.xib in Resources */,
 				4AC677C925EBC22500F57F9B /* FirstViewController.xib in Resources */,
 				4AC677DD25EBC5F500F57F9B /* SecondViewController.xib in Resources */,
@@ -344,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AC677CA25EBC22500F57F9B /* FirstViewController.xib in Resources */,
+				4A991F5125EF79EF00771E8B /* DailyTableViewCell.xib in Resources */,
 				4AC677EC25EBC60300F57F9B /* ThirdViewController.xib in Resources */,
 				4A442F2F25EF45930033DF52 /* IntradateTableViewCell.xib in Resources */,
 				4AC677DE25EBC5F500F57F9B /* SecondViewController.xib in Resources */,
@@ -355,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AC677CB25EBC22500F57F9B /* FirstViewController.xib in Resources */,
+				4A991F5525EF79F000771E8B /* DailyTableViewCell.xib in Resources */,
 				4AC677ED25EBC60300F57F9B /* ThirdViewController.xib in Resources */,
 				4A442F3025EF45930033DF52 /* IntradateTableViewCell.xib in Resources */,
 				4AC677DF25EBC5F500F57F9B /* SecondViewController.xib in Resources */,
@@ -376,8 +394,10 @@
 				4AC6776D25EBBB0800F57F9B /* AppDelegate.swift in Sources */,
 				4A442F2B25EF45930033DF52 /* IntradateTableViewCell.swift in Sources */,
 				4AC677B225EBC09800F57F9B /* MainViewController.swift in Sources */,
+				4A991F3B25EF78AD00771E8B /* DailyTableViewCell.swift in Sources */,
 				4AC677DA25EBC5F500F57F9B /* SecondViewController.swift in Sources */,
 				4AC677E825EBC60300F57F9B /* ThirdViewController.swift in Sources */,
+				4A991F3025EF767D00771E8B /* StockDaily.swift in Sources */,
 				4AC677C625EBC22500F57F9B /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A442F2C25EF45930033DF52 /* IntradateTableViewCell.swift in Sources */,
+				4A991F3125EF767D00771E8B /* StockDaily.swift in Sources */,
 				4AC677DB25EBC5F500F57F9B /* SecondViewController.swift in Sources */,
 				4AC677C725EBC22500F57F9B /* FirstViewController.swift in Sources */,
 				4AC677E925EBC60300F57F9B /* ThirdViewController.swift in Sources */,
@@ -394,6 +415,7 @@
 				4AC6780525EBD1EB00F57F9B /* TimeSeriesIntradayDataType.swift in Sources */,
 				4AC677F425EBC85B00F57F9B /* ProjectViewModel.swift in Sources */,
 				4AC677B325EBC09800F57F9B /* MainViewController.swift in Sources */,
+				4A991F3C25EF78AD00771E8B /* DailyTableViewCell.swift in Sources */,
 				4A442ED425EE11B80033DF52 /* Enums.swift in Sources */,
 				4A442ECD25EE10A90033DF52 /* Utils.swift in Sources */,
 			);
@@ -404,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A442F2D25EF45930033DF52 /* IntradateTableViewCell.swift in Sources */,
+				4A991F3225EF767D00771E8B /* StockDaily.swift in Sources */,
 				4AC677DC25EBC5F500F57F9B /* SecondViewController.swift in Sources */,
 				4AC677C825EBC22500F57F9B /* FirstViewController.swift in Sources */,
 				4AC677EA25EBC60300F57F9B /* ThirdViewController.swift in Sources */,
@@ -411,6 +434,7 @@
 				4AC6780625EBD1EB00F57F9B /* TimeSeriesIntradayDataType.swift in Sources */,
 				4AC677F525EBC85B00F57F9B /* ProjectViewModel.swift in Sources */,
 				4AC677B425EBC09800F57F9B /* MainViewController.swift in Sources */,
+				4A991F3D25EF78AD00771E8B /* DailyTableViewCell.swift in Sources */,
 				4A442ED525EE11B80033DF52 /* Enums.swift in Sources */,
 				4A442ECE25EE10A90033DF52 /* Utils.swift in Sources */,
 			);

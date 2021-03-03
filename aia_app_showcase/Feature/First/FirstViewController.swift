@@ -25,8 +25,9 @@ class FirstViewController: UIViewController {
 // MARK: - Private Functions
 private extension FirstViewController {
     func initCommon() {
+        view.backgroundColor = .white
+        
         txtSearch.text = "IBM"
-        txtSearch.delegate = self
         
         setBindings()
         setTable()
@@ -74,11 +75,4 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     
-}
-
-// MARK: - UISearchBarDelegate
-extension FirstViewController: UISearchBarDelegate {
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        viewModel.timeSeriesIntraday(symbol: txtSearch.text ?? "")
-    }
 }

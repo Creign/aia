@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecondViewController" customModule="aia_app_showcase" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="vCa-yb-2fP" id="MAm-Fl-GxJ"/>
+                <outlet property="txtSearch" destination="alm-6q-51X" id="mSS-qY-ANE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
